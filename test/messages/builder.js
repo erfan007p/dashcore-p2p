@@ -3,7 +3,7 @@
 var should = require('chai').should();
 var P2P = require('../../');
 var builder = P2P.Messages.builder;
-var dashcore = require('@dashevo/dashcore-lib');
+var gobytecore = require('@gobytecoin/gobytecore-lib');
 
 describe('Messages Builder', function() {
 
@@ -18,9 +18,9 @@ describe('Messages Builder', function() {
     it('should return commands with customizations', function() {
       // instantiate
       var b = builder({
-        network: dashcore.Networks.testnet,
-        Block: dashcore.Block,
-        Transaction: dashcore.Transaction
+        network: gobytecore.Networks.testnet,
+        Block: gobytecore.Block,
+        Transaction: gobytecore.Transaction
       });
       should.exist(b);
     });
