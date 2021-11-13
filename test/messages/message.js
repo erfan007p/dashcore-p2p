@@ -31,7 +31,7 @@ describe('Message', function() {
         return new Buffer(0);
       };
       var buffer = message.toBuffer();
-      var expectedBuffer = new Buffer('bf0c6bbd636f6d6d616e640000000000000000005df6e0e2', 'hex');
+      var expectedBuffer = new Buffer('1ab2c3d4636f6d6d616e640000000000000000005df6e0e2', 'hex');
       buffer.should.deep.equal(expectedBuffer);
     });
   });

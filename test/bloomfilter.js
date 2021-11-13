@@ -36,14 +36,14 @@ describe('BloomFilter', function() {
 
   it('serialize filter with public keys added', function() {
 
-    var privateKey = gobytecore.PrivateKey.fromWIF('7sQb6QHALg4XyHsJHsSNXnEHGhZfzTTUPJXJqaqK7CavQkiL9Ms');
+    var privateKey = gobytecore.PrivateKey.fromWIF('WKQCxDCKqaVdo1kCWPQL3kK1Ye4yhSU6NxZ3yHnRgNVwHQ3XsbX5');
     var publicKey = privateKey.toPublicKey();
 
     var filter = BloomFilter.create(2, 0.001, 0, BloomFilter.BLOOM_UPDATE_ALL);
     filter.insert(publicKey.toBuffer());
     filter.insert(gobytecore.crypto.Hash.sha256ripemd160(publicKey.toBuffer()));
 
-    var expectedFilter = BloomFilter.fromBuffer(ParseHex('038fc16b080000000000000001'));
+    var expectedFilter = BloomFilter.fromBuffer(ParseHex('030f44fc080000000000000001'));
 
     filter.toBuffer().should.deep.equal(expectedFilter.toBuffer());
 
